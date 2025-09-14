@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book a call with me! - Coffee Chat</title>
+    <meta name="description" content="Need a second brain for brainstorming product design? 🧠 Or are you a Product Manager or Program/Project Manager who just needs a coffee buddy to talk things through? ☕ Let's connect!">
+    
+    <!-- Open Graph Meta Tags for LinkedIn -->
+    <meta property="og:title" content="Book a call with me! - Coffee Chat">
+    <meta property="og:description" content="Need a second brain for brainstorming product design? 🧠 Or are you a Product Manager or Program/Project Manager who just needs a coffee buddy to talk things through? ☕ Let's connect!">
+    <meta property="og:image" content="https://github.com/srushtidharmale/caffai-scheduler/raw/main/linkedin-perfect-match.html">
+    <meta property="og:url" content="https://github.com/srushtidharmale/caffai-scheduler">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Book a call with me! - Coffee Chat">
+    <meta name="twitter:description" content="Need a second brain for brainstorming product design? 🧠 Or are you a Product Manager or Program/Project Manager who just needs a coffee buddy to talk things through? ☕ Let's connect!">
+    <meta name="twitter:image" content="https://github.com/srushtidharmale/caffai-scheduler/raw/main/linkedin-perfect-match.html">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #f8f9fa;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            min-height: 100vh;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            padding: 60px 40px;
+            text-align: center;
+        }
+
+        .coffee-icon {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .main-title {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #1f2937;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .main-title i {
+            color: #8b5cf6;
+            font-size: 2.5rem;
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: #6b7280;
+            margin-bottom: 20px;
+        }
+
+        .description {
+            font-size: 1.2rem;
+            color: #4b5563;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .content {
+            padding: 60px 40px;
+        }
+
+        .intro-section {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .intro-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #1f2937;
+            margin-bottom: 20px;
+        }
+
+        .intro-text {
+            font-size: 1.2rem;
+            color: #4b5563;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            line-height: 1.6;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .feature-card {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            border-color: #8b5cf6;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(139, 92, 246, 0.1);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .feature-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #1f2937;
+            margin-bottom: 15px;
+        }
+
+        .feature-desc {
+            color: #6b7280;
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, #8b5cf6, #a855f7);
+            color: white;
+            padding: 60px 40px;
+            text-align: center;
+            border-radius: 20px;
+            margin: 40px 0;
+        }
+
+        .cta-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .cta-text {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: #8b5cf6;
+            padding: 16px 32px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .booking-form {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            margin: 40px 0;
+        }
+
+        .form-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .form-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #1f2937;
+            margin-bottom: 10px;
+        }
+
+        .form-subtitle {
+            color: #6b7280;
+            font-size: 1.1rem;
+        }
+
+        .form {
+            display: grid;
+            gap: 25px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .form-group label {
+            font-weight: 600;
+            color: #374151;
+            font-size: 1rem;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            padding: 12px 16px;
+            border: 2px solid #e5e7eb;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-family: inherit;
+            transition: all 0.2s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #8b5cf6;
+            box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .submit-button {
+            background: linear-gradient(135deg, #8b5cf6, #a855f7);
+            color: white;
+            border: none;
+            padding: 16px 32px;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            justify-self: center;
+            margin-top: 20px;
+        }
+
+        .submit-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(139, 92, 246, 0.3);
+        }
+
+        .submit-button:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .footer {
+            background: #1f2937;
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .footer-text {
+            font-size: 1rem;
+            opacity: 0.8;
+        }
+
+        .success-message {
+            background: #f0fdf4;
+            border: 1px solid #bbf7d0;
+            color: #166534;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            text-align: center;
+            display: none;
+        }
+
+        .error-message {
+            background: #fef2f2;
+            border: 1px solid #fecaca;
+            color: #dc2626;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            text-align: center;
+            display: none;
+        }
+
+        .email-info {
+            background: #eff6ff;
+            border: 1px solid #bfdbfe;
+            color: #1e40af;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .contact-info {
+            background: #fef3c7;
+            border: 1px solid #f59e0b;
+            color: #92400e;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                padding: 40px 20px;
+            }
+            
+            .main-title {
+                font-size: 2.2rem;
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .content {
+                padding: 40px 20px;
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .booking-form {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="coffee-icon">☕</div>
+            <h1 class="main-title">Coffee Chat <i class="fas fa-coffee"></i></h1>
+            <p class="subtitle">Let's Connect & Collaborate</p>
+            <p class="description">
+                Whether you need a brainstorming partner, want to discuss opportunities, or just want to connect over coffee - I'd love to chat with you!
+            </p>
+        </div>
+
+        <div class="content">
+            <div class="intro-section">
+                <h2 class="intro-title">Book a call with me!</h2>
+                <p class="intro-text">
+                    Need a second brain for brainstorming product design? 🧠 Or are you a Product Manager or Program/Project Manager who just needs a coffee buddy to talk things through? ☕ Let's connect. I'm always up for bouncing ideas, or just sharing stories from the product trenches!
+                </p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🧠</div>
+                    <h3 class="feature-title">Brainstorming Sessions</h3>
+                    <p class="feature-desc">Bounce ideas and get fresh perspectives on your projects and challenges.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💼</div>
+                    <h3 class="feature-title">Career Advice</h3>
+                    <p class="feature-desc">Discuss opportunities, growth strategies, and career development.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🤝</div>
+                    <h3 class="feature-title">Networking</h3>
+                    <p class="feature-desc">Build meaningful connections and expand your professional network.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">☕</div>
+                    <h3 class="feature-title">Coffee Chat</h3>
+                    <p class="feature-desc">Just connect and have a great conversation over coffee!</p>
+                </div>
+            </div>
+
+            <div class="cta-section">
+                <h2 class="cta-title">Ready to Connect?</h2>
+                <p class="cta-text">Book your coffee chat now and let's start the conversation!</p>
+                <a href="#booking-form" class="cta-button">Book Coffee Chat →</a>
+            </div>
+
+            <div id="booking-form" class="booking-form">
+                <div class="form-header">
+                    <h2 class="form-title">Book Your Coffee Chat</h2>
+                    <p class="form-subtitle">Fill out the form below and I'll get back to you soon!</p>
+                </div>
+
+                <div class="email-info">
+                    <strong>📧 How it works:</strong> Fill out the form below and I'll receive your booking details via email. I'll get back to you within 24 hours to confirm our coffee chat!
+                </div>
+                
+                <div class="success-message" id="successMessage">
+                    <h3>✅ Booking Confirmed!</h3>
+                    <p>Thank you! Your coffee chat request has been submitted. I'll get back to you soon! ☕</p>
+                    <p><strong>What happens next:</strong></p>
+                    <ul style="text-align: left; max-width: 400px; margin: 10px auto;">
+                        <li>I'll receive your booking details via email</li>
+                        <li>I'll review your request within 24 hours</li>
+                        <li>I'll send you a calendar invite</li>
+                        <li>We'll connect for your coffee chat!</li>
+                    </ul>
+                </div>
+
+                <div class="error-message" id="errorMessage">
+                    <h3>❌ Something went wrong</h3>
+                    <p id="errorText">Please try again or contact me directly.</p>
+                </div>
+                
+                <form class="form" id="coffeeForm">
+                    <div class="form-group">
+                        <label for="name">Your Name *</label>
+                        <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="topic">What would you like to discuss? *</label>
+                        <select id="topic" name="topic" required>
+                            <option value="">Select a topic...</option>
+                            <option value="brainstorming">Brainstorming Session</option>
+                            <option value="career">Career Opportunities</option>
+                            <option value="business">Business Collaboration</option>
+                            <option value="technology">Technology Discussion</option>
+                            <option value="networking">Networking & Connections</option>
+                            <option value="mentoring">Mentoring & Advice</option>
+                            <option value="project">Project Discussion</option>
+                            <option value="general">General Coffee Chat</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="datetime">Preferred Date & Time *</label>
+                        <input type="datetime-local" id="datetime" name="datetime" required>
+                        <small style="color: #6b7280; font-size: 0.9rem;">Please select a date and time at least 2 hours from now</small>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="notes">Additional Notes (Optional)</label>
+                        <textarea id="notes" name="notes" placeholder="Tell me a bit more about what you'd like to discuss..."></textarea>
+                    </div>
+                    
+                    <button type="submit" class="submit-button" id="submitButton">
+                        Book Coffee Chat
+                    </button>
+                </form>
+
+                <div class="contact-info">
+                    <strong>📞 Alternative Contact:</strong> If you prefer, you can also reach out to me directly at <strong>srushtidharmale@gmail.com</strong> or connect with me on <strong>LinkedIn</strong>!
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p class="footer-text">Ready to connect? Book your coffee chat now! ☕</p>
+        </div>
+    </div>
+
+    <script>
+        // Set minimum date to 2 hours from now
+        const now = new Date();
+        now.setHours(now.getHours() + 2);
+        document.getElementById('datetime').min = now.toISOString().slice(0, 16);
+
+        // Form submission
+        document.getElementById('coffeeForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form elements
+            const submitButton = document.getElementById('submitButton');
+            const successMessage = document.getElementById('successMessage');
+            const errorMessage = document.getElementById('errorMessage');
+            
+            // Show loading state
+            submitButton.textContent = 'Sending...';
+            submitButton.disabled = true;
+            
+            // Hide previous messages
+            successMessage.style.display = 'none';
+            errorMessage.style.display = 'none';
+            
+            // Get form data
+            const formData = {
+                name: document.getElementById('name').value.trim(),
+                email: document.getElementById('email').value.trim(),
+                topic: document.getElementById('topic').value,
+                datetime: document.getElementById('datetime').value,
+                notes: document.getElementById('notes').value.trim()
+            };
+
+            // Validate form
+            if (!formData.name || !formData.email || !formData.topic || !formData.datetime) {
+                showError('Please fill in all required fields.');
+                submitButton.textContent = 'Book Coffee Chat';
+                submitButton.disabled = false;
+                return;
+            }
+
+            // Simulate form submission (in a real scenario, this would send to your email)
+            setTimeout(() => {
+                // Show success message
+                successMessage.style.display = 'block';
+                submitButton.textContent = 'Book Coffee Chat';
+                submitButton.disabled = false;
+                
+                // Reset form
+                document.getElementById('coffeeForm').reset();
+                
+                // Scroll to success message
+                successMessage.scrollIntoView({ behavior: 'smooth' });
+
+                // In a real implementation, you would send this data to your email service
+                console.log('Booking data:', formData);
+                
+                // For now, we'll show the data in the console
+                // In production, this would be sent to your email
+                alert(`Booking submitted!\n\nName: ${formData.name}\nEmail: ${formData.email}\nTopic: ${formData.topic}\nDate: ${formData.datetime}\nNotes: ${formData.notes}\n\nI'll get back to you soon! ☕`);
+                
+            }, 1500);
+        });
+
+        function showError(message) {
+            const errorMessage = document.getElementById('errorMessage');
+            const errorText = document.getElementById('errorText');
+            errorText.textContent = message;
+            errorMessage.style.display = 'block';
+            errorMessage.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Real-time validation
+        const inputs = document.querySelectorAll('input[required], select[required]');
+        inputs.forEach(input => {
+            input.addEventListener('blur', function() {
+                if (this.hasAttribute('required') && !this.value.trim()) {
+                    this.style.borderColor = '#ef4444';
+                } else {
+                    this.style.borderColor = '#e5e7eb';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
