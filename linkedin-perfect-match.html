@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LinkedIn Featured Section - Perfect Match</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #f3f2ef;
+            padding: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .linkedin-featured-card {
+            width: 600px;
+            height: 200px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            display: flex;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .link-label {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            background: #0077b5;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 10px;
+            font-weight: 600;
+            text-transform: uppercase;
+            z-index: 10;
+        }
+
+        .visual-section {
+            width: 200px;
+            background: #f8f9fa;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .coffee-container {
+            position: relative;
+            width: 100px;
+            height: 100px;
+        }
+
+        .coffee-glass {
+            width: 50px;
+            height: 70px;
+            background: linear-gradient(to bottom, #6F4E37 0%, #6F4E37 35%, #F5F5DC 35%, #F5F5DC 100%);
+            border-radius: 0 0 6px 6px;
+            position: absolute;
+            top: 15px;
+            left: 25px;
+            border: 2px solid #ddd;
+        }
+
+        .coffee-glass::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            height: 6px;
+            background: #ddd;
+            border-radius: 6px 6px 0 0;
+        }
+
+        .ice-cubes {
+            position: absolute;
+            top: 3px;
+            left: 3px;
+            right: 3px;
+            height: 12px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 2px;
+        }
+
+        .coaster {
+            position: absolute;
+            bottom: 5px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 70px;
+            height: 6px;
+            background: #D2B48C;
+            border-radius: 3px;
+        }
+
+        .coffee-drips {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            font-size: 16px;
+            color: #8B4513;
+        }
+
+        .coffee-drips::before {
+            content: '💧';
+            position: absolute;
+            top: -5px;
+            left: -8px;
+        }
+
+        .coffee-drips::after {
+            content: '💧';
+            position: absolute;
+            top: 8px;
+            left: -12px;
+        }
+
+        .branches {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            font-size: 12px;
+            color: #333;
+        }
+
+        .branches::before {
+            content: '🌿';
+            position: absolute;
+            top: -3px;
+            right: -6px;
+        }
+
+        .branches::after {
+            content: '🌿';
+            position: absolute;
+            bottom: -3px;
+            right: -8px;
+        }
+
+        .text-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: #333;
+            z-index: 5;
+        }
+
+        .coffee-text {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 2px;
+        }
+
+        .time-text {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        .connect-text {
+            font-size: 10px;
+            color: #666;
+        }
+
+        .question-text {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            font-size: 9px;
+            color: #666;
+            font-style: italic;
+            text-align: right;
+            max-width: 70px;
+            line-height: 1.2;
+        }
+
+        .content-section {
+            flex: 1;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #000;
+            margin-bottom: 5px;
+        }
+
+        .platform {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        .description {
+            font-size: 14px;
+            color: #333;
+            line-height: 1.4;
+        }
+
+        .emoji {
+            font-size: 14px;
+        }
+
+        @media (max-width: 768px) {
+            .linkedin-featured-card {
+                width: 100%;
+                height: auto;
+                flex-direction: column;
+            }
+            
+            .visual-section {
+                width: 100%;
+                height: 150px;
+            }
+            
+            .content-section {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="linkedin-featured-card">
+        <div class="link-label">Link</div>
+        
+        <div class="visual-section">
+            <div class="coffee-container">
+                <div class="coffee-glass">
+                    <div class="ice-cubes"></div>
+                </div>
+                <div class="coaster"></div>
+                <div class="coffee-drips"></div>
+                <div class="branches"></div>
+                
+                <div class="text-overlay">
+                    <div class="coffee-text">Coffee</div>
+                    <div class="time-text">Time</div>
+                    <div class="connect-text">Let's connect! ☕</div>
+                </div>
+                
+                <div class="question-text">Seriously, how much coffee is too much coffee?</div>
+            </div>
+        </div>
+        
+        <div class="content-section">
+            <div class="title">Book a call with me!</div>
+            <div class="platform">Custom Booking Form</div>
+            <div class="description">
+                Need a second brain for brainstorming product design? <span class="emoji">🧠</span><br>
+                Or are you a Product Manager or Program/Project Manager who just needs a coffee buddy to talk things through? <span class="emoji">☕</span><br>
+                Let's connect. I'm always up for bouncing ideas...
+            </div>
+        </div>
+    </div>
+</body>
+</html>
