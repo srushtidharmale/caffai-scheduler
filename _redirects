@@ -1,0 +1,4 @@
+# Netlify redirects file
+# This ensures the form submissions work properly
+
+/*    /simple-email-form.html   200
