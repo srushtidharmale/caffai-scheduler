@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LinkedIn Auto-Fill Helper</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #f8f9fa;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #8b5cf6, #a855f7);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .step {
+            margin-bottom: 30px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #8b5cf6;
+        }
+
+        .step h3 {
+            color: #1f2937;
+            margin-bottom: 15px;
+        }
+
+        .auto-fill-section {
+            background: #fef3c7;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 4px solid #f59e0b;
+        }
+
+        .copy-box {
+            background: #1f2937;
+            color: #f9fafb;
+            padding: 15px;
+            border-radius: 6px;
+            font-family: 'Courier New', monospace;
+            margin: 10px 0;
+            position: relative;
+            word-break: break-all;
+        }
+
+        .copy-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #8b5cf6;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 12px;
+        }
+
+        .copy-button:hover {
+            background: #7c3aed;
+        }
+
+        .copy-button.copied {
+            background: #10b981;
+        }
+
+        .action-button {
+            display: inline-block;
+            background: #8b5cf6;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            margin: 10px 5px;
+            transition: background 0.2s;
+        }
+
+        .action-button:hover {
+            background: #7c3aed;
+        }
+
+        .success {
+            background: #f0fdf4;
+            border: 1px solid #bbf7d0;
+            color: #166534;
+            padding: 15px;
+            border-radius: 6px;
+            margin: 15px 0;
+        }
+
+        .warning {
+            background: #fef2f2;
+            border: 1px solid #fecaca;
+            color: #dc2626;
+            padding: 15px;
+            border-radius: 6px;
+            margin: 15px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🚀 LinkedIn Auto-Fill Helper</h1>
+            <p>I'll help you add your Coffee Chat to LinkedIn in 2 minutes!</p>
+        </div>
+
+        <div class="content">
+            <div class="auto-fill-section">
+                <h3>📋 Step 1: Copy These Details</h3>
+                <p>Click the "Copy" button next to each section below:</p>
+                
+                <div class="copy-box">
+                    <strong>URL:</strong> https://github.com/srushtidharmale/caffai-scheduler
+                    <button class="copy-button" onclick="copyToClipboard(this, 'https://github.com/srushtidharmale/caffai-scheduler')">Copy</button>
+                </div>
+
+                <div class="copy-box">
+                    <strong>Title:</strong> Book a call with me!
+                    <button class="copy-button" onclick="copyToClipboard(this, 'Book a call with me!')">Copy</button>
+                </div>
+
+                <div class="copy-box">
+                    <strong>Description:</strong> Need a second brain for brainstorming product design? 🧠 Or are you a Product Manager or Program/Project Manager who just needs a coffee buddy to talk things through? ☕ Let's connect. I'm always up for bouncing ideas, or just sharing stories from the product trenches!
+                    <button class="copy-button" onclick="copyToClipboard(this, 'Need a second brain for brainstorming product design? 🧠 Or are you a Product Manager or Program/Project Manager who just needs a coffee buddy to talk things through? ☕ Let\'s connect. I\'m always up for bouncing ideas, or just sharing stories from the product trenches!')">Copy</button>
+                </div>
+            </div>
+
+            <div class="step">
+                <h3>🖼️ Step 2: Get Your Design Image</h3>
+                <p>Click this button to open the perfect design, then take a screenshot:</p>
+                <a href="linkedin-perfect-match.html" target="_blank" class="action-button">Open Design →</a>
+                <div class="success">
+                    <strong>✅ What to do:</strong> When the design opens, take a screenshot of the entire card and save it to your computer.
+                </div>
+            </div>
+
+            <div class="step">
+                <h3>🔗 Step 3: Go to LinkedIn</h3>
+                <p>Click this button to go directly to your LinkedIn featured section:</p>
+                <a href="https://www.linkedin.com/in/srushtidharmale-93438a248/details/featured/" target="_blank" class="action-button">Open LinkedIn →</a>
+                <div class="success">
+                    <strong>✅ What to do:</strong> Once on LinkedIn, click "Add featured" → Select "Media" → Upload your screenshot → Paste the details above → Click "Save"
+                </div>
+            </div>
+
+            <div class="step">
+                <h3>🎯 Step 4: You're Done!</h3>
+                <p>Your LinkedIn featured section will now show:</p>
+                <ul>
+                    <li>✅ Beautiful coffee-themed design</li>
+                    <li>✅ Professional title and description</li>
+                    <li>✅ Direct link to your Coffee Chat booking form</li>
+                    <li>✅ Perfect preview when people click "View"</li>
+                </ul>
+            </div>
+
+            <div class="warning">
+                <strong>⚠️ Need Help?</strong> If you're still having trouble:
+                <ul>
+                    <li>Make sure you're logged into LinkedIn</li>
+                    <li>Try refreshing the page if buttons don't work</li>
+                    <li>Check that you're on the "Featured" section</li>
+                    <li>Make sure to select "Media" not "Link" when adding</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function copyToClipboard(button, text) {
+            navigator.clipboard.writeText(text).then(function() {
+                button.textContent = 'Copied!';
+                button.classList.add('copied');
+                setTimeout(function() {
+                    button.textContent = 'Copy';
+                    button.classList.remove('copied');
+                }, 2000);
+            }).catch(function(err) {
+                // Fallback for older browsers
+                const textArea = document.createElement('textarea');
+                textArea.value = text;
+                document.body.appendChild(textArea);
+                textArea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textArea);
+                
+                button.textContent = 'Copied!';
+                button.classList.add('copied');
+                setTimeout(function() {
+                    button.textContent = 'Copy';
+                    button.classList.remove('copied');
+                }, 2000);
+            });
+        }
+    </script>
+</body>
+</html>
