@@ -1,0 +1,20 @@
+[build]
+  publish = "."
+  command = "echo 'No build step required'"
+
+[build.environment]
+  NODE_VERSION = "18"
+
+[[redirects]]
+  from = "/*"
+  to = "/simple-email-form.html"
+  status = 200
+
+[context.production]
+  command = "echo 'Deploying Coffee Chat Booking Form'"
+
+[context.deploy-preview]
+  command = "echo 'Preview deployment'"
+
+[context.branch-deploy]
+  command = "echo 'Branch deployment'"

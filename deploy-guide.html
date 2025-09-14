@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deploy to Netlify - Coffee Chat</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #f8f9fa;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #8b5cf6, #a855f7);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .step {
+            margin-bottom: 30px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #8b5cf6;
+        }
+
+        .step h3 {
+            color: #1f2937;
+            margin-bottom: 15px;
+        }
+
+        .code-block {
+            background: #1f2937;
+            color: #f9fafb;
+            padding: 15px;
+            border-radius: 6px;
+            font-family: 'Courier New', monospace;
+            margin: 10px 0;
+            overflow-x: auto;
+        }
+
+        .button {
+            display: inline-block;
+            background: #8b5cf6;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            margin: 10px 5px;
+            transition: background 0.2s;
+        }
+
+        .button:hover {
+            background: #7c3aed;
+        }
+
+        .success {
+            background: #f0fdf4;
+            border: 1px solid #bbf7d0;
+            color: #166534;
+            padding: 15px;
+            border-radius: 6px;
+            margin: 15px 0;
+        }
+
+        .warning {
+            background: #fef2f2;
+            border: 1px solid #fecaca;
+            color: #dc2626;
+            padding: 15px;
+            border-radius: 6px;
+            margin: 15px 0;
+        }
+
+        .info {
+            background: #eff6ff;
+            border: 1px solid #bfdbfe;
+            color: #1e40af;
+            padding: 15px;
+            border-radius: 6px;
+            margin: 15px 0;
+        }
+
+        .highlight {
+            background: #fef3c7;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🚀 Deploy to Netlify</h1>
+            <p>Get your Coffee Chat booking form live with email notifications!</p>
+        </div>
+
+        <div class="content">
+            <div class="info">
+                <strong>🎯 Goal:</strong> Deploy your Coffee Chat form to Netlify so you get email notifications when someone books a coffee chat!
+            </div>
+
+            <div class="step">
+                <h3>Step 1: Go to Netlify</h3>
+                <p>1. Open <a href="https://netlify.com" target="_blank">https://netlify.com</a></p>
+                <p>2. Click <span class="highlight">"Sign up"</span> (it's free!)</p>
+                <p>3. Sign up with your GitHub account (easiest way)</p>
+                <div class="success">
+                    <strong>✅ Why Netlify?</strong> Free hosting + automatic email notifications for form submissions!
+                </div>
+            </div>
+
+            <div class="step">
+                <h3>Step 2: Connect Your GitHub Repository</h3>
+                <p>1. In Netlify dashboard, click <span class="highlight">"New site from Git"</span></p>
+                <p>2. Choose <span class="highlight">"GitHub"</span></p>
+                <p>3. Find and select your repository: <span class="highlight">srushtidharmale/caffai-scheduler</span></p>
+                <p>4. Click <span class="highlight">"Deploy site"</span></p>
+                <div class="success">
+                    <strong>✅ Result:</strong> Your site will be live in 2-3 minutes!
+                </div>
+            </div>
+
+            <div class="step">
+                <h3>Step 3: Configure Build Settings</h3>
+                <p>Netlify will automatically detect your settings, but verify:</p>
+                <div class="code-block">
+Build command: (leave empty)<br>
+Publish directory: .<br>
+Branch: main
+                </div>
+                <div class="success">
+                    <strong>✅ I've already created the netlify.toml file for you!</strong>
+                </div>
+            </div>
+
+            <div class="step">
+                <h3>Step 4: Set Up Form Notifications</h3>
+                <p>1. Go to your Netlify dashboard</p>
+                <p>2. Click on your site name</p>
+                <p>3. Go to <span class="highlight">"Forms"</span> tab</p>
+                <p>4. You'll see form submissions here automatically!</p>
+                <div class="success">
+                    <strong>✅ Email Setup:</strong> Go to Site settings → Forms → Form notifications → Add notification
+                </div>
+            </div>
+
+            <div class="step">
+                <h3>Step 5: Get Your New URL</h3>
+                <p>After deployment, you'll get a URL like:</p>
+                <div class="code-block">
+https://amazing-coffee-chat-123456.netlify.app
+                </div>
+                <p>This is your new Coffee Chat booking URL!</p>
+            </div>
+
+            <div class="step">
+                <h3>Step 6: Update LinkedIn</h3>
+                <p>1. Go to your LinkedIn featured section</p>
+                <p>2. Edit your featured item</p>
+                <p>3. Change the URL to your new Netlify URL</p>
+                <p>4. Save</p>
+                <div class="success">
+                    <strong>✅ Perfect!</strong> Now when people click from LinkedIn, they'll go to your Netlify site with working email notifications!
+                </div>
+            </div>
+
+            <div class="step">
+                <h3>Step 7: Test Everything</h3>
+                <p>1. Visit your new Netlify URL</p>
+                <p>2. Fill out the Coffee Chat form</p>
+                <p>3. Submit it</p>
+                <p>4. Check your Netlify dashboard for the form submission</p>
+                <p>5. Set up email notifications in Netlify</p>
+                <div class="success">
+                    <strong>🎉 Success!</strong> Your Coffee Chat booking system is now fully live with email notifications!
+                </div>
+            </div>
+
+            <div class="warning">
+                <strong>⚠️ Important Notes:</strong>
+                <ul>
+                    <li>Keep your GitHub repository connected to Netlify</li>
+                    <li>Any changes you make to GitHub will automatically deploy to Netlify</li>
+                    <li>Form submissions are stored in Netlify dashboard</li>
+                    <li>You can set up email notifications in Netlify settings</li>
+                </ul>
+            </div>
+
+            <div class="step">
+                <h3>🎯 Quick Deploy Button</h3>
+                <p>Click this button to deploy directly from GitHub to Netlify:</p>
+                <a href="https://app.netlify.com/start/deploy?repository=https://github.com/srushtidharmale/caffai-scheduler" target="_blank" class="button">Deploy to Netlify →</a>
+                <div class="info">
+                    <strong>💡 Pro Tip:</strong> This button will take you directly to Netlify with your repository pre-selected!
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
