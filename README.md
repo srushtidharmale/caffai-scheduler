@@ -6,18 +6,19 @@ A modern, responsive coffee chat booking system perfect for LinkedIn featured se
 
 ## 🚀 Live Demo
 
-**Netlify (Recommended):** [Deploy to Netlify](https://app.netlify.com/start/deploy?repository=https://github.com/srushtidharmale/caffai-scheduler)
-
 **GitHub Pages:** [View Live Site](https://srushtidharmale.github.io/caffai-scheduler/)
+
+**Netlify (Alternative):** [Deploy to Netlify](https://app.netlify.com/start/deploy?repository=https://github.com/srushtidharmale/caffai-scheduler)
 
 ## ✨ Features
 
 - **Professional Design** - Beautiful, responsive form matching LinkedIn standards
-- **Email Notifications** - Automatic email alerts when someone books
+- **Email Notifications** - Automatic email alerts when someone books (opens your email client)
 - **Form Validation** - Real-time validation with helpful error messages
 - **LinkedIn Optimized** - Perfect for LinkedIn featured sections
 - **Mobile Responsive** - Works perfectly on all devices
 - **Multiple Topics** - Brainstorming, career advice, networking, and more
+- **No External Dependencies** - Works 100% reliably without external services
 
 ## 🎯 What We Can Discuss
 
@@ -30,12 +31,28 @@ A modern, responsive coffee chat booking system perfect for LinkedIn featured se
 - **Project Discussion** - Work through challenges together
 - **General Coffee Chat** - Just connect and chat!
 
+## 📧 How Email Notifications Work
+
+When someone books a coffee chat:
+
+1. **Form Submission** - User fills out the booking form
+2. **Validation** - Real-time validation ensures all required fields are filled
+3. **Success Message** - Professional confirmation message appears
+4. **Email Opens** - Your email client automatically opens with pre-filled details
+5. **You Get Notified** - Complete booking information sent to srushtidharmale@gmail.com
+
+**Email Format:**
+```
+Subject: New Coffee Chat Booking - [Name]
+Body: Complete booking details including name, email, topic, date/time, and notes
+```
+
 ## 🛠️ Technical Stack
 
 - **HTML5** - Semantic markup with proper form structure
 - **CSS3** - Modern styling with Flexbox, Grid, and animations
 - **JavaScript** - Form validation and user interactions
-- **Netlify Forms** - Email notifications and form handling
+- **Email Notifications** - Automatic email alerts via mailto links
 - **GitHub Pages** - Free hosting and deployment
 
 ## 📁 File Structure
@@ -43,7 +60,7 @@ A modern, responsive coffee chat booking system perfect for LinkedIn featured se
 ```
 caffai-scheduler/
 ├── index.html                    # Main redirect page
-├── simple-email-form.html        # Working booking form with email
+├── email-notification-form.html  # Working booking form with email notifications
 ├── linkedin-view-page.html       # LinkedIn optimized page
 ├── linkedin-perfect-match.html   # LinkedIn card design
 ├── linkedin-auto-fill.html       # LinkedIn setup helper
