@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Your Coffee</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>just want to connect over coffee</h1>
+        </div>
+        
+        <div class="form-container">
+            <div class="form-header">
+                <div class="robot-icon">
+                    <i class="fas fa-robot"></i>
+                </div>
+                <h2>Book Your Coffee</h2>
+            </div>
+            
+            <form id="coffeeForm" class="coffee-form">
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <div class="name-inputs">
+                        <input type="text" id="firstName" name="firstName" placeholder="First Name" required>
+                        <input type="text" id="lastName" name="lastName" placeholder="Last Name" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="topic">What would you like to discuss?</label>
+                    <select id="topic" name="topic" required>
+                        <option value="">Select a topic...</option>
+                        <option value="general">General Coffee Chat</option>
+                        <option value="career">Career Advice</option>
+                        <option value="business">Business Discussion</option>
+                        <option value="technology">Technology Talk</option>
+                        <option value="networking">Networking</option>
+                        <option value="mentoring">Mentoring</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="datetime">Preferred Date & Time</label>
+                    <input type="datetime-local" id="datetime" name="datetime" required>
+                    <small class="help-text">Please select a date and time at least 24 hours in advance</small>
+                </div>
+                
+                <div class="form-group">
+                    <label for="notes">Additional Notes (Optional)</label>
+                    <textarea id="notes" name="notes" placeholder="Tell me a bit more about what you'd like to discuss..." rows="4"></textarea>
+                </div>
+                
+                <div class="form-actions">
+                    <button type="submit" class="book-button">
+                        <i class="fas fa-calendar-alt"></i>
+                        Book Coffee
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+    <!-- Success Modal -->
+    <div id="successModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <i class="fas fa-check-circle"></i>
+                <h3>Booking Confirmed!</h3>
+            </div>
+            <div class="modal-body">
+                <p>Your coffee meeting has been successfully booked. You'll receive a confirmation email shortly.</p>
+                <div class="booking-details">
+                    <p><strong>Name:</strong> <span id="confirmName"></span></p>
+                    <p><strong>Topic:</strong> <span id="confirmTopic"></span></p>
+                    <p><strong>Date & Time:</strong> <span id="confirmDateTime"></span></p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button onclick="closeModal()" class="close-button">Close</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
