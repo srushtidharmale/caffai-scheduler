@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee Chat - LinkedIn Featured</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f8f9fa;
+            padding: 20px;
+        }
+
+        .featured-card {
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .card-header {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            padding: 30px;
+            text-align: center;
+            position: relative;
+        }
+
+        .coffee-icon {
+            font-size: 4rem;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .main-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #1f2937;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: #6b7280;
+            margin-bottom: 20px;
+        }
+
+        .description {
+            font-size: 1rem;
+            color: #4b5563;
+            line-height: 1.6;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .card-content {
+            padding: 30px;
+        }
+
+        .feature-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #1f2937;
+            margin-bottom: 15px;
+        }
+
+        .platform {
+            color: #8b5cf6;
+            font-weight: 500;
+            margin-bottom: 15px;
+        }
+
+        .feature-description {
+            color: #4b5563;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #8b5cf6, #a855f7);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.2s ease;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+        }
+
+        .decorative-elements {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 1.2rem;
+            color: #8b5cf6;
+        }
+
+        .bottom-decoration {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            font-size: 1rem;
+            color: #6b7280;
+        }
+
+        @media (max-width: 768px) {
+            .main-title {
+                font-size: 2rem;
+            }
+            
+            .card-header {
+                padding: 20px;
+            }
+            
+            .card-content {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="featured-card">
+        <div class="card-header">
+            <div class="decorative-elements">☕</div>
+            <div class="coffee-icon">☕</div>
+            <h1 class="main-title">Coffee Chat</h1>
+            <p class="subtitle">Let's Connect & Collaborate</p>
+            <p class="description">Whether you need a brainstorming partner, want to discuss opportunities, or just want to connect over coffee - I'd love to chat with you!</p>
+            <div class="bottom-decoration">Ready to book? ☕</div>
+        </div>
+        
+        <div class="card-content">
+            <h2 class="feature-title">Book a Coffee Chat with me!</h2>
+            <p class="platform">Custom Booking Form</p>
+            <p class="feature-description">
+                Need a second brain for brainstorming product design? 🧠 Or are you a Product Manager, Developer, or Entrepreneur who just needs a coffee buddy to talk things through? ☕ Let's connect! I'm always up for bouncing ideas, discussing opportunities, or just having a meaningful conversation over coffee.
+            </p>
+            <a href="https://github.com/srushtidharmale/caffai-scheduler" class="cta-button" target="_blank">
+                Book Coffee Chat →
+            </a>
+        </div>
+    </div>
+</body>
+</html>
