@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee Chat Thumbnail</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #f3f2ef;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .thumbnail {
+            width: 600px;
+            height: 315px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+            display: flex;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .visual-section {
+            width: 40%;
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .coffee-container {
+            position: relative;
+            width: 120px;
+            height: 120px;
+        }
+
+        .coffee-glass {
+            width: 60px;
+            height: 80px;
+            background: linear-gradient(to bottom, #6F4E37 0%, #6F4E37 35%, #F5F5DC 35%, #F5F5DC 100%);
+            border-radius: 0 0 8px 8px;
+            position: absolute;
+            top: 20px;
+            left: 30px;
+            border: 3px solid #ddd;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .coffee-glass::before {
+            content: '';
+            position: absolute;
+            top: -3px;
+            left: -3px;
+            right: -3px;
+            height: 8px;
+            background: #ddd;
+            border-radius: 8px 8px 0 0;
+        }
+
+        .ice-cubes {
+            position: absolute;
+            top: 5px;
+            left: 5px;
+            right: 5px;
+            height: 15px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 3px;
+        }
+
+        .coaster {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 8px;
+            background: #D2B48C;
+            border-radius: 4px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        .coffee-drips {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            font-size: 20px;
+            color: #8B4513;
+        }
+
+        .coffee-drips::before {
+            content: '💧';
+            position: absolute;
+            top: -8px;
+            left: -12px;
+        }
+
+        .coffee-drips::after {
+            content: '💧';
+            position: absolute;
+            top: 10px;
+            left: -15px;
+        }
+
+        .branches {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 16px;
+            color: #333;
+        }
+
+        .branches::before {
+            content: '🌿';
+            position: absolute;
+            top: -5px;
+            right: -8px;
+        }
+
+        .branches::after {
+            content: '🌿';
+            position: absolute;
+            bottom: -5px;
+            right: -10px;
+        }
+
+        .text-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: #333;
+            z-index: 5;
+        }
+
+        .coffee-text {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 5px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .time-text {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 12px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .connect-text {
+            font-size: 14px;
+            color: #666;
+            font-weight: 500;
+        }
+
+        .question-text {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 11px;
+            color: #666;
+            font-style: italic;
+            text-align: right;
+            max-width: 80px;
+            line-height: 1.2;
+        }
+
+        .content-section {
+            flex: 1;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background: white;
+        }
+
+        .title {
+            font-size: 24px;
+            font-weight: bold;
+            color: #000;
+            margin-bottom: 8px;
+            line-height: 1.2;
+        }
+
+        .platform {
+            font-size: 16px;
+            color: #8b5cf6;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .description {
+            font-size: 16px;
+            color: #333;
+            line-height: 1.4;
+            margin-bottom: 20px;
+        }
+
+        .emoji {
+            font-size: 18px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #8b5cf6, #a855f7);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            box-shadow: 0 4px 12px rgba(139, 92, 246, 0.3);
+            align-self: flex-start;
+        }
+
+        .decorative-elements {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 24px;
+            color: #8b5cf6;
+            opacity: 0.3;
+        }
+
+        .bottom-decoration {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            font-size: 20px;
+            color: #8b5cf6;
+            opacity: 0.3;
+        }
+
+        @media (max-width: 768px) {
+            .thumbnail {
+                width: 100%;
+                height: auto;
+                flex-direction: column;
+            }
+            
+            .visual-section {
+                width: 100%;
+                height: 200px;
+            }
+            
+            .content-section {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="thumbnail">
+        <div class="visual-section">
+            <div class="coffee-container">
+                <div class="coffee-glass">
+                    <div class="ice-cubes"></div>
+                </div>
+                <div class="coaster"></div>
+                <div class="coffee-drips"></div>
+                <div class="branches"></div>
+                
+                <div class="text-overlay">
+                    <div class="coffee-text">Coffee</div>
+                    <div class="time-text">Time</div>
+                    <div class="connect-text">Let's connect! ☕</div>
+                </div>
+                
+                <div class="question-text">Seriously, how much coffee is too much coffee?</div>
+            </div>
+            
+            <div class="decorative-elements">☕</div>
+            <div class="bottom-decoration">☕</div>
+        </div>
+        
+        <div class="content-section">
+            <div class="title">Book a call with me!</div>
+            <div class="platform">Custom Booking Form</div>
+            <div class="description">
+                Need a second brain for brainstorming product design? <span class="emoji">🧠</span><br>
+                Or are you a Product Manager or Developer who just needs a coffee buddy to talk things through? <span class="emoji">☕</span><br>
+                Let's connect. I'm always up for bouncing ideas...
+            </div>
+            <a href="#" class="cta-button">Book Coffee Chat →</a>
+        </div>
+    </div>
+</body>
+</html>
