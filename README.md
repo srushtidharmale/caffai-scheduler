@@ -1,6 +1,6 @@
-# Coffee Booking Form ☕
+# Coffee Chat Booking Form ☕
 
-A modern, responsive coffee booking form built with HTML, CSS, and JavaScript. This project allows users to book coffee meetings with a clean, intuitive interface.
+A modern, responsive coffee chat booking form built with HTML, CSS, and JavaScript. This project allows people to book coffee chat meetings for collaboration, brainstorming, networking, and meaningful conversations.
 
 ## Features ✨
 
@@ -13,9 +13,18 @@ A modern, responsive coffee booking form built with HTML, CSS, and JavaScript. T
 
 ## Form Fields 📝
 
-- **Name**: First and last name inputs
-- **Topic Selection**: Dropdown with predefined meeting topics
-- **Date & Time**: DateTime picker with minimum date validation (24 hours advance notice)
+- **Name**: Full name input field
+- **Email**: Email address for confirmation and communication
+- **Topic Selection**: Dropdown with predefined coffee chat topics including:
+  - Brainstorming Session
+  - Career Opportunities
+  - Business Collaboration
+  - Technology Discussion
+  - Networking & Connections
+  - Mentoring & Advice
+  - Project Discussion
+  - General Coffee Chat
+- **Date & Time**: DateTime picker with minimum date validation (2 hours advance notice)
 - **Additional Notes**: Optional textarea for additional information
 
 ## Technologies Used 🛠️
@@ -29,10 +38,11 @@ A modern, responsive coffee booking form built with HTML, CSS, and JavaScript. T
 ## File Structure 📁
 
 ```
-coffee-booking-form/
+coffee-chat-booking/
 ├── index.html          # Main HTML file
 ├── styles.css          # CSS styles and animations
 ├── script.js           # JavaScript functionality
+├── .gitignore          # Git ignore file
 └── README.md           # Project documentation
 ```
 
@@ -41,7 +51,7 @@ coffee-booking-form/
 1. **Clone the repository**:
    ```bash
    git clone <repository-url>
-   cd coffee-booking-form
+   cd coffee-chat-booking
    ```
 
 2. **Open in browser**:
@@ -73,9 +83,9 @@ The form uses a warm color palette:
 - Success: Green (`#10b981`)
 
 ### Form Topics
-Edit the topic options in `index.html`:
+Edit the coffee chat topic options in `index.html`:
 ```html
-<option value="your-topic">Your Topic Name</option>
+<option value="your-topic">Your Coffee Chat Topic</option>
 ```
 
 ### Backend Integration
@@ -97,8 +107,9 @@ setTimeout(() => {
 ## Features in Detail 🔍
 
 ### Form Validation
-- Required field validation
-- Date/time validation (must be future date)
+- Required field validation (name, email, topic, date/time)
+- Email format validation
+- Date/time validation (must be at least 2 hours in the future)
 - Real-time error feedback
 - Visual error states with animations
 
@@ -138,4 +149,4 @@ If you have any questions or suggestions, feel free to reach out!
 
 ---
 
-**Happy Coffee Booking! ☕✨**
+**Happy Coffee Chat Booking! ☕✨**

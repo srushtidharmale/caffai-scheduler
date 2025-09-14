@@ -4,13 +4,12 @@ document.addEventListener('DOMContentLoaded', function() {
     const successModal = document.getElementById('successModal');
     const bookButton = document.querySelector('.book-button');
     
-    // Set minimum date to tomorrow
-    const tomorrow = new Date();
-    tomorrow.setDate(tomorrow.getDate() + 1);
-    tomorrow.setHours(9, 0, 0, 0); // Set to 9 AM tomorrow
+    // Set minimum date to 2 hours from now
+    const now = new Date();
+    now.setHours(now.getHours() + 2);
     
     const datetimeInput = document.getElementById('datetime');
-    datetimeInput.min = tomorrow.toISOString().slice(0, 16);
+    datetimeInput.min = now.toISOString().slice(0, 16);
     
     // Form submission handler
     form.addEventListener('submit', function(e) {
@@ -30,8 +29,8 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Form validation
     function validateForm() {
-        const firstName = document.getElementById('firstName').value.trim();
-        const lastName = document.getElementById('lastName').value.trim();
+        const name = document.getElementById('name').value.trim();
+        const email = document.getElementById('email').value.trim();
         const topic = document.getElementById('topic').value;
         const datetime = document.getElementById('datetime').value;
         
@@ -40,15 +39,18 @@ document.addEventListener('DOMContentLoaded', function() {
         // Clear previous error states
         clearErrors();
         
-        // Validate first name
-        if (!firstName) {
-            showError('firstName', 'First name is required');
+        // Validate name
+        if (!name) {
+            showError('name', 'Name is required');
             isValid = false;
         }
         
-        // Validate last name
-        if (!lastName) {
-            showError('lastName', 'Last name is required');
+        // Validate email
+        if (!email) {
+            showError('email', 'Email is required');
+            isValid = false;
+        } else if (!isValidEmail(email)) {
+            showError('email', 'Please enter a valid email address');
             isValid = false;
         }
         
@@ -65,9 +67,10 @@ document.addEventListener('DOMContentLoaded', function() {
         } else {
             const selectedDate = new Date(datetime);
             const now = new Date();
+            const twoHoursFromNow = new Date(now.getTime() + 2 * 60 * 60 * 1000);
             
-            if (selectedDate <= now) {
-                showError('datetime', 'Please select a future date and time');
+            if (selectedDate <= twoHoursFromNow) {
+                showError('datetime', 'Please select a date and time at least 2 hours from now');
                 isValid = false;
             }
         }
@@ -112,11 +115,17 @@ document.addEventListener('DOMContentLoaded', function() {
         bookButton.classList.add('loading');
     }
     
+    // Email validation helper
+    function isValidEmail(email) {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailRegex.test(email);
+    }
+    
     // Process booking (simulate API call)
     function processBooking() {
         const formData = {
-            firstName: document.getElementById('firstName').value.trim(),
-            lastName: document.getElementById('lastName').value.trim(),
+            name: document.getElementById('name').value.trim(),
+            email: document.getElementById('email').value.trim(),
             topic: document.getElementById('topic').value,
             datetime: document.getElementById('datetime').value,
             notes: document.getElementById('notes').value.trim()
@@ -133,14 +142,15 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Reset button state
         bookButton.disabled = false;
-        bookButton.innerHTML = '<i class="fas fa-calendar-alt"></i> Book Coffee';
+        bookButton.innerHTML = '<i class="fas fa-calendar-alt"></i> Book Coffee Chat';
         bookButton.classList.remove('loading');
     }
     
     // Show success modal
     function showSuccessModal(data) {
         // Populate modal with booking details
-        document.getElementById('confirmName').textContent = `${data.firstName} ${data.lastName}`;
+        document.getElementById('confirmName').textContent = data.name;
+        document.getElementById('confirmEmail').textContent = data.email;
         document.getElementById('confirmTopic').textContent = getTopicLabel(data.topic);
         document.getElementById('confirmDateTime').textContent = formatDateTime(data.datetime);
         
@@ -152,12 +162,14 @@ document.addEventListener('DOMContentLoaded', function() {
     // Get topic label for display
     function getTopicLabel(topicValue) {
         const topics = {
+            'brainstorming': 'Brainstorming Session',
+            'career': 'Career Opportunities',
+            'business': 'Business Collaboration',
+            'technology': 'Technology Discussion',
+            'networking': 'Networking & Connections',
+            'mentoring': 'Mentoring & Advice',
+            'project': 'Project Discussion',
             'general': 'General Coffee Chat',
-            'career': 'Career Advice',
-            'business': 'Business Discussion',
-            'technology': 'Technology Talk',
-            'networking': 'Networking',
-            'mentoring': 'Mentoring',
             'other': 'Other'
         };
         return topics[topicValue] || topicValue;

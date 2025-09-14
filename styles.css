@@ -26,10 +26,35 @@ body {
 }
 
 .header h1 {
-    font-size: 2.5rem;
-    font-weight: 300;
-    color: #374151;
+    font-size: 3rem;
+    font-weight: 700;
+    color: #1f2937;
     letter-spacing: -0.02em;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.header h1 i {
+    color: #8b5cf6;
+    font-size: 2.5rem;
+}
+
+.header h2 {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #4b5563;
+    margin-bottom: 15px;
+}
+
+.header p {
+    font-size: 1.1rem;
+    color: #6b7280;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
 }
 
 /* Form Container */
@@ -99,13 +124,10 @@ body {
     font-size: 0.95rem;
 }
 
-.name-inputs {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 15px;
-}
+/* Remove name-inputs styles since we're using single name field now */
 
 input[type="text"],
+input[type="email"],
 input[type="datetime-local"],
 select,
 textarea {
@@ -119,6 +141,7 @@ textarea {
 }
 
 input[type="text"]:focus,
+input[type="email"]:focus,
 input[type="datetime-local"]:focus,
 select:focus,
 textarea:focus {
@@ -129,6 +152,7 @@ textarea:focus {
 }
 
 input[type="text"]:hover,
+input[type="email"]:hover,
 input[type="datetime-local"]:hover,
 select:hover,
 textarea:hover {
@@ -309,17 +333,28 @@ textarea {
     }
     
     .header h1 {
+        font-size: 2.5rem;
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .header h1 i {
         font-size: 2rem;
+    }
+    
+    .header h2 {
+        font-size: 1.3rem;
+    }
+    
+    .header p {
+        font-size: 1rem;
     }
     
     .form-header h2 {
         font-size: 1.5rem;
     }
     
-    .name-inputs {
-        grid-template-columns: 1fr;
-        gap: 15px;
-    }
+    /* Remove name-inputs responsive styles */
     
     .form-actions {
         justify-content: center;
@@ -346,7 +381,19 @@ textarea {
     }
     
     .header h1 {
-        font-size: 1.8rem;
+        font-size: 2rem;
+    }
+    
+    .header h1 i {
+        font-size: 1.5rem;
+    }
+    
+    .header h2 {
+        font-size: 1.2rem;
+    }
+    
+    .header p {
+        font-size: 0.95rem;
     }
     
     .form-header {

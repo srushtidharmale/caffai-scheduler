@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Book Your Coffee</title>
+    <title>Coffee Chat - Book Your Meeting</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -11,7 +11,9 @@
 <body>
     <div class="container">
         <div class="header">
-            <h1>just want to connect over coffee</h1>
+            <h1>Coffee Chat <i class="fas fa-coffee"></i></h1>
+            <h2>Let's Connect & Collaborate</h2>
+            <p>Whether you need a brainstorming partner, want to discuss opportunities, or just want to connect over coffee - I'd love to chat with you!</p>
         </div>
         
         <div class="form-container">
@@ -19,28 +21,32 @@
                 <div class="robot-icon">
                     <i class="fas fa-robot"></i>
                 </div>
-                <h2>Book Your Coffee</h2>
+                <h2>Book Your Coffee Chat</h2>
             </div>
             
             <form id="coffeeForm" class="coffee-form">
                 <div class="form-group">
                     <label for="name">Your Name</label>
-                    <div class="name-inputs">
-                        <input type="text" id="firstName" name="firstName" placeholder="First Name" required>
-                        <input type="text" id="lastName" name="lastName" placeholder="Last Name" required>
-                    </div>
+                    <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email address" required>
                 </div>
                 
                 <div class="form-group">
                     <label for="topic">What would you like to discuss?</label>
                     <select id="topic" name="topic" required>
                         <option value="">Select a topic...</option>
+                        <option value="brainstorming">Brainstorming Session</option>
+                        <option value="career">Career Opportunities</option>
+                        <option value="business">Business Collaboration</option>
+                        <option value="technology">Technology Discussion</option>
+                        <option value="networking">Networking & Connections</option>
+                        <option value="mentoring">Mentoring & Advice</option>
+                        <option value="project">Project Discussion</option>
                         <option value="general">General Coffee Chat</option>
-                        <option value="career">Career Advice</option>
-                        <option value="business">Business Discussion</option>
-                        <option value="technology">Technology Talk</option>
-                        <option value="networking">Networking</option>
-                        <option value="mentoring">Mentoring</option>
                         <option value="other">Other</option>
                     </select>
                 </div>
@@ -48,7 +54,7 @@
                 <div class="form-group">
                     <label for="datetime">Preferred Date & Time</label>
                     <input type="datetime-local" id="datetime" name="datetime" required>
-                    <small class="help-text">Please select a date and time at least 24 hours in advance</small>
+                    <small class="help-text">Please select a date and time at least 2 hours from now</small>
                 </div>
                 
                 <div class="form-group">
@@ -59,7 +65,7 @@
                 <div class="form-actions">
                     <button type="submit" class="book-button">
                         <i class="fas fa-calendar-alt"></i>
-                        Book Coffee
+                        Book Coffee Chat
                     </button>
                 </div>
             </form>
@@ -74,9 +80,10 @@
                 <h3>Booking Confirmed!</h3>
             </div>
             <div class="modal-body">
-                <p>Your coffee meeting has been successfully booked. You'll receive a confirmation email shortly.</p>
+                <p>Your coffee chat has been successfully booked! You'll receive a confirmation email shortly.</p>
                 <div class="booking-details">
                     <p><strong>Name:</strong> <span id="confirmName"></span></p>
+                    <p><strong>Email:</strong> <span id="confirmEmail"></span></p>
                     <p><strong>Topic:</strong> <span id="confirmTopic"></span></p>
                     <p><strong>Date & Time:</strong> <span id="confirmDateTime"></span></p>
                 </div>
