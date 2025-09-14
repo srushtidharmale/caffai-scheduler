@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Setup Guide for Coffee Chat</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #f8f9fa;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #8b5cf6, #a855f7);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .step {
+            margin-bottom: 30px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #8b5cf6;
+        }
+
+        .step h3 {
+            color: #1f2937;
+            margin-bottom: 15px;
+        }
+
+        .code-block {
+            background: #1f2937;
+            color: #f9fafb;
+            padding: 15px;
+            border-radius: 6px;
+            font-family: 'Courier New', monospace;
+            margin: 10px 0;
+            overflow-x: auto;
+        }
+
+        .button {
+            display: inline-block;
+            background: #8b5cf6;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            margin: 10px 5px;
+            transition: background 0.2s;
+        }
+
+        .button:hover {
+            background: #7c3aed;
+        }
+
+        .success {
+            background: #f0fdf4;
+            border: 1px solid #bbf7d0;
+            color: #166534;
+            padding: 15px;
+            border-radius: 6px;
+            margin: 15px 0;
+        }
+
+        .warning {
+            background: #fef2f2;
+            border: 1px solid #fecaca;
+            color: #dc2626;
+            padding: 15px;
+            border-radius: 6px;
+            margin: 15px 0;
+        }
+
+        .info {
+            background: #eff6ff;
+            border: 1px solid #bfdbfe;
+            color: #1e40af;
+            padding: 15px;
+            border-radius: 6px;
+            margin: 15px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📧 Email Setup Guide</h1>
+            <p>Set up email notifications for your Coffee Chat bookings</p>
+        </div>
+
+        <div class="content">
+            <div class="info">
+                <strong>📋 Current Issue:</strong> Your form shows a success message but doesn't send actual emails. Let's fix this!
+            </div>
+
+            <div class="step">
+                <h3>🎯 Option 1: EmailJS (Recommended - Free & Easy)</h3>
+                <p>This is the easiest way to add email functionality to your form.</p>
+                
+                <h4>Step 1: Create EmailJS Account</h4>
+                <p>1. Go to <a href="https://www.emailjs.com/" target="_blank">https://www.emailjs.com/</a></p>
+                <p>2. Sign up for free</p>
+                <p>3. Create a new service (Gmail, Outlook, etc.)</p>
+                
+                <h4>Step 2: Get Your Credentials</h4>
+                <p>Copy these from your EmailJS dashboard:</p>
+                <div class="code-block">
+Service ID: your_service_id<br>
+Template ID: your_template_id<br>
+Public Key: your_public_key
+                </div>
+                
+                <h4>Step 3: Update Your Form</h4>
+                <p>I'll update your form to use these credentials.</p>
+            </div>
+
+            <div class="step">
+                <h3>🎯 Option 2: Formspree (Alternative)</h3>
+                <p>Another free service for handling form submissions.</p>
+                
+                <h4>Step 1: Create Formspree Account</h4>
+                <p>1. Go to <a href="https://formspree.io/" target="_blank">https://formspree.io/</a></p>
+                <p>2. Sign up for free</p>
+                <p>3. Create a new form</p>
+                
+                <h4>Step 2: Get Your Form ID</h4>
+                <div class="code-block">
+Form ID: YOUR_FORM_ID
+                </div>
+                
+                <h4>Step 3: Update Your Form</h4>
+                <p>I'll update your form to use Formspree.</p>
+            </div>
+
+            <div class="step">
+                <h3>🎯 Option 3: Netlify Forms (If using Netlify)</h3>
+                <p>If you're hosting on Netlify, this is the easiest option.</p>
+                
+                <h4>Step 1: Add Netlify Attribute</h4>
+                <div class="code-block">
+&lt;form name="coffee-chat" method="POST" data-netlify="true"&gt;
+                </div>
+                
+                <h4>Step 2: Add Hidden Field</h4>
+                <div class="code-block">
+&lt;input type="hidden" name="form-name" value="coffee-chat"&gt;
+                </div>
+            </div>
+
+            <div class="success">
+                <strong>✅ What I'll Do:</strong> Once you choose an option and provide the credentials, I'll update your form to actually send emails when someone books a coffee chat!
+            </div>
+
+            <div class="warning">
+                <strong>⚠️ Important:</strong> Without email setup, you won't know when someone books a coffee chat. Choose one of the options above and I'll help you set it up!
+            </div>
+
+            <div class="step">
+                <h3>🚀 Quick Start (Recommended)</h3>
+                <p>I recommend EmailJS because it's:</p>
+                <ul>
+                    <li>✅ Free for up to 200 emails/month</li>
+                    <li>✅ Easy to set up</li>
+                    <li>✅ Works with any email provider</li>
+                    <li>✅ No server required</li>
+                </ul>
+                
+                <p><strong>Next Steps:</strong></p>
+                <ol>
+                    <li>Sign up for EmailJS</li>
+                    <li>Send me your credentials</li>
+                    <li>I'll update your form</li>
+                    <li>Test it and you're done!</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
